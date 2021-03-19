@@ -483,8 +483,8 @@ body {
   visibility: hidden;
 }
 
-.date-header {
-  visibility: hidden;
+.tbl-large {
+  visibility: visible;
 }
 
 @media screen and (min-width: 700px) {
