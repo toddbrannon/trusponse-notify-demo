@@ -1,0 +1,44 @@
+<% include partials/header %>
+
+
+    <div class = "container">
+        <div class = "row">
+            
+            <div style="width: 60%; margin: 25px auto;">
+                <h1 style="text-align: center;">Compose and Send Email</h1>
+                <form action="/send-email" method="POST">
+                    <div class="form row">
+                        <div class="col-sm-12">
+                            <label for="to" class="col-sm-1 col-form-label">To</label>
+                                <input class="form-control" id="emailAddress" name="prospect[emailAddress]" value="<%= prospect.emailAddress %>" type="text" />
+                        </div>
+                    </div>
+                
+                    <div class="form row">
+                        <div class="col-sm-12">
+                            <label for="subject" class="col-sm-1 col-form-label">Subject</label>
+                                <input type="text" class="form-control" style="margin: 0 0 6px 0;" name="subject">
+                        </div>
+                    </div>
+                    <div class="form row">
+                        <div class="col-sm-12">
+                            <label for="body" class="col-sm-1 col-form-label">Body</label>
+                                <textarea cols="5" rows="8"class="form-control" style="margin: 0 0 10px 0;" name="body"></textarea>
+                        </div>
+                    </div>
+                    <div style="width: 65%; margin: 25px auto">
+                    <div class="form row">
+                        <div class="col-sm-6">
+                            <a class="btn btn-lg btn-default btn-success btn-block" href="/prospects.<%= prospect._id %>"><i class="far fa-paper-plane"></i> Send</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a class="btn btn-lg btn-default btn-info btn-block" href="/prospects/<%= prospect._id %>"><i class="fas fa-undo"></i> Cancel</a>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<% include partials/footer %>

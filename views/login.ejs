@@ -1,0 +1,54 @@
+<% include partials/header %>
+
+<!--<div class = "container">
+        <div class = "row">
+            <h1 style="text-align: center;">Login</h1>
+            <div style="width: 30%; margin: 25px auto;">
+                <form action="/login" method="POST">
+                    
+                            <div class = "form-group">
+                                <input class="form-control" type="text" name="username" placeholder="username">
+                            </div>
+                             <div class = "form-group">
+                                <input class="form-control" type="password" name="password" placeholder="password">
+                            </div>
+
+                            <div class = "form-group">
+                                <button class="btn btn-lg btn-default btn-primary btn-block">Login</button>
+                            </div>
+
+                    <a href="/">Back to Main</a>
+                </form>
+            </div>
+        </div>
+    </div>-->
+    
+<div class="row">
+    <div class="col-sm-12" style="text-align: center;">
+    
+    <div class = "card" style = "width: 24rem; display: inline-block; padding-top: 8rem;">
+        <div class = "card-body">
+            <h1 class="card-title">Admin Login</h1>
+            
+                <form action="/login" method="POST">
+                    
+                            <div class = "form-group">
+                                <input class="form-control" type="text" name="username" placeholder="username">
+                            </div>
+                             <div class = "form-group">
+                                <input class="form-control" type="password" name="password" placeholder="password">
+                            </div>
+
+                            <div class = "form-group">
+                                <button class="btn btn-lg btn-default btn-primary btn-block">Sign In</button>
+                            </div>
+
+                    <!--<a href="/">Back to Main</a>-->
+                </form>
+            
+        </div>
+    </div>
+    </div>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>mymaps</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>My Geocode App</title>
+</head>
+
+<header>
+        <div class="logo"><a href="/">TruSponse</a></div>
+        <nav>
+            <ul>
+                <% if(!currentUser){ %>
+                    <li><a href="/login3">Log in</a></li>
+                    <% } else { %>  
+                        <li><a href = "#">Logged in as <%= currentUser.username %></a></li>
+                        <li><a href="/">Main</a></li>
+                        <li><a href="/prospects/new">New Prospect</a></li>
+                        <li><a href="/prospects">View Prospects</a></li>
+                        <li><a href="/logout">Sign Out</a></li>
+                        <% } %>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+        
+        </div>
+        
+        
+    </div>
+        
+    </header>
+    
+
+<body>
+    
+    <div class="container-maps">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card-block" style="margin:25px auto; background:#E9ECEF; padding: 25px 25px; min-height: 90vh;" id="location-block">
+                    <h2 style="text-align: center;">Enter Location: </h2>
+                        <form id="location-form">
+                            <input type="text" id="location-input" class="form-control form-control-lg">
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-block" style="margin: 0 auto; width: 50%;">
+                            Submit
+                            </button>
+                        </form>
+                    <div class="card-block" style="margin:25px auto;" id="formattedAddress"></div>
+                    <div class="card-block" style="margin:25px auto;" id="addressComponents"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card-block" style="margin:25px auto; background:#E9ECEF; padding: 25px 25px; min-height: 90vh;" id="location-block">
+                    <h2 style="text-align: center;">Map</h2>
+                    <div class="card-block" id="map" style="height:400px; width: 100%;"></div>
+                    <div class="card-block" style="margin:25px auto;" id="geometry"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Call Geocode
+        //geocode();
+        
+        // Get location form
+        var locationForm = document.getElementById('location-form');
+        
+        // Listen for submit
+        locationForm.addEventListener('submit', geocode);
+
+        function geocode(e) {
+            // Prevent actual submit
+            e.preventDefault();
+            
+            var location = document.getElementById('location-input').value;
+            
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                    params: {
+                        address: location,
+                        key: 'AIzaSyA3a2Rc2t4xNF4L7YgQT-4JEJIgrrZ9ioU'
+                    }
+                })
+                .then(function(response) {
+                    // Log full response
+                    console.log(response);
+
+                    // Formatted Address
+                    var formattedAddress = response.data.results[0].formatted_address;
+                    var formattedAddressOutput = `
+                        <ul class="list-group">
+                            <li class="list-group-item">${formattedAddress}</li>
+                        </ul>
+                    `;
+
+                    // Address Components
+                    var addressComponents = response.data.results[0].address_components;
+                    var addressComponentsOutput = '<ul class="list-group">';
+                    for(var i = 0; i < addressComponents.length; i++){
+                        addressComponentsOutput += `
+                            <li class="list-group-item"><strong>${addressComponents[i].types[0]}</strong>: ${addressComponents[i].long_name}</li>
+                        `;
+                    }
+                    addressComponentsOutput += '<ul>';
+                    
+                    // Geometry
+                    var lat = response.data.results[0].geometry.location.lat;
+                    var lng = response.data.results[0].geometry.location.lng;
+                    var geometryOutput = `
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Latitude</strong>: ${lat}</li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Longitude</strong>: ${lng}</li>
+                        </ul>
+                    `;
+
+                    // Output to App
+                    document.getElementById('formattedAddress').innerHTML = formattedAddressOutput;
+                    document.getElementById('addressComponents').innerHTML = addressComponentsOutput;
+                    document.getElementById('geometry').innerHTML = geometryOutput;
+                    
+                    
+                    function initMap(){
+                    // Map options
+                    var myLatlng = new google.maps.LatLng(lat, lng);
+                    var options = {
+                        zoom: 18,
+                        center: myLatlng,
+                        mapTypeId: 'satellite'
+                    }
+                    
+                    // New map
+                    var map = new
+                    google.maps.Map(document.getElementById('map'), options);
+                                
+                    // Add marker
+                    var marker = new google.maps.Marker({
+                        position:myLatlng,
+                        map:map
+                    });
+                    map.setTilt(0);
+                }
+                    
+                    // Run initMap function
+                    initMap();
+                    
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3a2Rc2t4xNF4L7YgQT-4JEJIgrrZ9ioU&callback=initMap"
+    async defer></script>
+    
+<% include partials/footer %>

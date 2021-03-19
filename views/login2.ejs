@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+            <div class="container">
+                <div class="d-flex content-justify-center w-50">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Admin Login</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form">
+                                <form id="sub-form" method="POST" action="/login2" novalidate>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="username" placeholder="username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" name="password" placeholder="password">
+                                    </div>
+                                    <div class = "form-group">
+                                        <button class="btn btn-lg btn-default btn-primary btn-block">Sign In</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-center">
+					                <a href="#">Forgot your password?</a>
+				                </div>
+                            </div>
+                            <!-- <input type="submit" class="btn btn-primary btn-block"> -->
+                            </div>
+                        </div>
+                    </div>
+
+    
+
+<% include partials/footer %>
