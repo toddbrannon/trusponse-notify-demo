@@ -479,6 +479,10 @@ body {
   vertical-align: bottom;
 }
 
+.tbl-mobile {
+  visibility: hidden;
+}
+
 .date-header {
   visibility: hidden;
 }
@@ -519,7 +523,13 @@ body {
       margin-right: 0;
   }
 
-  
+  .tbl-large {
+    visibility: hidden;
+  }
+
+  .tbl-mobile {
+    visibility: visible;
+  }
 
 }
 
