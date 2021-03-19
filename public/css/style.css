@@ -523,14 +523,6 @@ body {
       margin-right: 0;
   }
 
-  .tbl-large {
-    visibility: hidden;
-  }
-
-  .tbl-mobile {
-    visibility: visible;
-  }
-
 }
 
 .inner-action {
