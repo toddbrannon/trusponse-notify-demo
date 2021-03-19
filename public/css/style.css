@@ -470,6 +470,10 @@ body {
   max-height: none;
 }
 
+.table {
+  font-size: .50rem;
+}
+
 @media screen and (min-width: 700px) {
   .inner-action{
     max-width: 90%;
@@ -506,6 +510,8 @@ body {
       margin-right: 0;
   }
 
+  
+
 }
 
 .inner-action {
@@ -526,6 +532,7 @@ body {
     width: 90%;
     /* margin: auto; */
   }
+  
 }
 
 /* ################### */
