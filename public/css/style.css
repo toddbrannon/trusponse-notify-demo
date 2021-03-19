@@ -479,7 +479,7 @@ body {
   vertical-align: bottom;
 }
 
-.table th .date {
+.table th .date-header {
   visibility: hidden;
 }
 
