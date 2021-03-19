@@ -1,29 +1,43 @@
 <%- include ('partials/header') -%>
 
-<div class="container">
-<header class="jumbotron">
-    <div class = "container">
+<div class="container container-header">
+<!-- <header class="jumbotron"> -->
+    <div class = "container py-5">
         <h1>Welcome to the TruSponse Notify Demo</h1>
             <h4>A CRUD style app built with NodeJS/Express/MongoDB</h4>
-            <p class="header-info">
-                    <% if(!currentUser){ %>
-                        <!--<a class = "btn btn-primary btn-lg" href="/login3">Login</a>-->
-                        <!--<p>Login to get started!<p>-->
-                    <% } else { %>
-                        <a class = "btn btn-primary btn-lg button-landing" href="/prospects"><i class="fas fa-glasses"></i>  View All Prospects</a>
-                        <a class = "btn btn-primary btn-lg button-landing" href="/prospects/new"><i class="fas fa-plus"></i>  Add a New Prospect</a>
-                        <a class = "btn btn-secondary btn-lg button-landing" href="/logout"><i class="fas fa-sign-out-alt"></i>  Logout</a>   
-                    <% } %>
-            </p>
-    </div>
-</header>
+            <div class="row">
+                <div class="col-sm-12 col-action">
+                    <div class="inner-action">
+                        <ul id="button-actions">
+                            <% if(!currentUser){ %>
+                                <!--<a class = "btn btn-primary btn-lg" href="/login3">Login</a>-->
+                                <!--<p>Login to get started!<p>-->
+                            <% } else { %>
+                                <li><a class = "btn btn-primary btn-lg button-landing" href="/prospects"><i class="fas fa-glasses"></i>  View All Prospects</a></li>
+                                <li><a class = "btn btn-primary btn-lg button-landing" href="/prospects/new"><i class="fas fa-plus"></i>  Add a New Prospect</a></li>
+                                <li><a class = "btn btn-secondary btn-lg button-landing" href="/logout"><i class="fas fa-sign-out-alt"></i>  Logout</a></li> 
+                            <% } %>
+                        </ul>
+                    </div>
+                    
 
-<div class = "row">
-    <div class = "col-lg-12">
-        <!--<h3>Welcome!</h3>-->
+                </div>
+            </div>
+            
+    </div>
+<!-- </header> -->
+
+</div>
+
+<div class="container container-actions">
+    <div class = "row">
+        <div class = "col-lg-12">
+            
+                
+            
+        </div>
     </div>
 </div>
 
-</div>
 
 <%- include ('partials/footer') -%>

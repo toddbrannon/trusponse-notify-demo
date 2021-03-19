@@ -66,7 +66,7 @@ content {
 
 .button-landing {
   display: block;
-  width: 30%;
+  /* width: 30%; */
   margin: 0.5rem 0;
 }
 
@@ -299,9 +299,11 @@ ul li.active a {
   --navbar-bg-contrast: hsl(0, 0%, 25%);
 }
 
-.jumbotron {
-  z-index: -1;
+#button-actions li {
+  list-style: none;
 }
+
+
 /* * {
   box-sizing: border-box;
   margin: 0;
@@ -469,6 +471,11 @@ body {
 }
 
 @media screen and (min-width: 700px) {
+  .inner-action{
+    max-width: 90%;
+    margin:auto;
+  }
+
   .navbar-toggle {
       display: none;
   }
@@ -499,14 +506,25 @@ body {
       margin-right: 0;
   }
 
-  
+}
 
+.inner-action {
+  max-width: 28rem; 
+  margin: 25px auto;
+  display: flex;
 }
 
 @media screen and (max-width: 767 px) {
   #login-form-section .form-section {
     max-width: 75%;
     margin: auto;
+  }
+  .btn {
+    max-width: 100%;
+  }
+  .inner-action .btn {
+    width: 90%;
+    /* margin: auto; */
   }
 }
 
@@ -528,9 +546,9 @@ table a {
 }
 
 @media only screen and (max-width: 991px) {
-  .button-landing {
+  /* .button-landing {
     width: 50%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 768px) {
