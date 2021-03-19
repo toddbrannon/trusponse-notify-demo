@@ -472,6 +472,7 @@ body {
 
 .table {
   font-size: .50rem;
+  vertical-align: bottom;
 }
 
 @media screen and (min-width: 700px) {
