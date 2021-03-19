@@ -522,6 +522,13 @@ body {
   #navbar .navbar-link:last-child {
       margin-right: 0;
   }
+  .tbl-large {
+    visibility: visible;
+  }
+
+  .tbl-mobile {
+    visibility: hidden;
+  }
 
 }
 
@@ -544,13 +551,7 @@ body {
     /* margin: auto; */
   }
 
-  .tbl-large {
-    visibility: hidden;
-  }
-
-  .tbl-mobile {
-    visibility: visible;
-  }
+  
   
 }
 
