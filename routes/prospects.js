@@ -22,9 +22,9 @@ router.post("/", isLoggedIn, function(req, res){
     var firstname = req.body.firstName;
     var lastname = req.body.lastName;
     var emailaddress = req.body.emailAddress;
-    var phonenumber = req.body.phoneNumber;
+    // var phonenumber = req.body.phoneNumber;
     var message = req.body.message;
-     var newProspect = { firstName: firstname, lastName: lastname, emailAddress: emailaddress, phoneNumber: phonenumber, message: message };
+     var newProspect = { firstName: firstname, lastName: lastname, emailAddress: emailaddress, /*phoneNumber: phonenumber, */message: message };
     // Create a new prospect and save to DB
     Prospect.create(newProspect, function (err, newlyCreated){
         if(err){
