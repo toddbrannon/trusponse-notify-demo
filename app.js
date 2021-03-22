@@ -44,10 +44,10 @@ var prospectsRoutes         = require("./routes/prospects"),
 // Use mongoURI for production (Heroku - ) 
 
 // MongoDB Atlas Dev
-const mongoURI = `mongodb+srv://toddqbrannon-admin:MongoDBTruSponse470dd!@trusponse.ugdwe.mongodb.net/notifydemo?retryWrites=true&w=majority`
+
 // MongoDB Atlas Prod
 
-// const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@trusponse.ugdwe.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`   
+const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@trusponse.ugdwe.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`   
 
 // Map global promises
 mongoose.Promise            = global.Promise;
