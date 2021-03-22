@@ -69,7 +69,7 @@ const connection = mongoose
 // PASSPORT CONFIGURATION
 //==============================================================================
 app.use(require("express-session")({
-    secret: "The four horsemen of the apocolypse cometh!",
+    secret:`${process.env.PASSPORT_SECRET}`,
     resave: false,
     saveUninitialized: false
 }));
@@ -87,42 +87,6 @@ app.use(function(req, res, next){
     res.locals.success = req.flash("success");
     next();
 });
-
-//==============================================================================
-/*app.get("/", function(req, res){
-    res.render("landing");
-});*/
-
-//== Nodemailer config ==
-// const account = {
-//     user: 'toddqbrannon@gmail.com',
-//     pass: ePass
-// }
-
-// var transporter = nodemailer.createTransport({
-//     pool: true, //keeps the server connection open
-//     host: 'smtp.gmail.com', //your email server
-//     port: 465, //gmail uses SSL
-//     secure: true, //gmail sends secure
-//     auth: {
-//          user: account.user,
-//          pass: account.pass
-//     }
-// });
-
-// // === Message ===
-// // send mail with defined transport object
-// // let info = await transporter.sendMail({
-// //     from: '"Todd Brannon" <toddqbrannon@gmail.com>', // sender address
-// //     to: "toddqbrannon@gmail.com, brannon.dev@gmail.com", // list of receivers
-// //     subject: "Hello ✔", // Subject line
-// //     text: "Hello world?", // plain text body
-// //     html: "<b>Hello world?</b>" // html body
-// //   });
-
-//   console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
 
 //=  Routes  ===================================================================
 
