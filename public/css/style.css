@@ -34,6 +34,11 @@
 
 .show-buttons {
   margin-top: 10px;
+  display: flex;
+}
+
+.show-buttons .btn {
+  width: 12rem !important;
 }
 
 .btn-return {
@@ -201,8 +206,6 @@ header .logo a {
   text-decoration: none;
 }
 
-
-
 .container-jumbo .logo {
   font-family: 'Lato', sans-serif;
   font-size: 3em;
@@ -250,6 +253,20 @@ ul li.active a {
   color: #fff;
   background: #2196f3;
   text-decoration: none;
+}
+
+.logged-in {
+  color: #3bb58b;
+}
+
+.tbl-mobile a:hover {
+  color: #3bb58b;
+  text-decoration: none;
+}
+
+.fas.fa-user {
+  padding: 0 0.5rem;
+  color: #3bb58b;
 }
 
 /*header nav ul li > a {
@@ -303,7 +320,6 @@ ul li.active a {
   list-style: none;
 }
 
-
 /* * {
   box-sizing: border-box;
   margin: 0;
@@ -334,6 +350,10 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+#navbar a {
+  height: 100%;
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -354,8 +374,7 @@ body {
   display: flex;
   font-weight: 400;
   align-items: center;
-  transition: background-color 0.2s ease-in-out,
-              color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .home-link:focus,
@@ -401,9 +420,8 @@ body {
   width: 25px;
   height: 4px;
   margin: 2px;
-  transition: background-color 0.2s ease-in-out,
-              transform 0.2s ease-in-out,
-              opacity 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
   background-color: var(--navbar-text-color);
 }
 
@@ -435,8 +453,7 @@ body {
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
-  transition: opacity 0.2s ease-in-out,
-              visibility 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
   opacity: 0;
   visibility: hidden;
   left: 0;
@@ -471,7 +488,7 @@ body {
 }
 
 .table {
-  font-size: .50rem;
+  /* font-size: calc(0.15rem + 1.5vw); */
   vertical-align: bottom;
 }
 
@@ -479,69 +496,66 @@ body {
   vertical-align: bottom;
 }
 
-.tbl-mobile {
-  visibility: hidden;
-}
-
-.tbl-large {
-  visibility: visible;
-}
-
-@media screen and (min-width: 700px) {
-  .inner-action{
+@media screen and (min-width: 1062px) {
+  .inner-action {
     max-width: 90%;
-    margin:auto;
+    margin: auto;
   }
 
   .navbar-toggle {
-      display: none;
+    display: none;
   }
-  
+
   #navbar .navbar-menu,
   #navbar.opened .navbar-menu {
-      visibility: visible;
-      opacity: 1;
-      position: static;
-      display: block;
-      height: 100%;
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    display: block;
+    height: 100%;
   }
 
   #navbar .navbar-links,
   #navbar.opened .navbar-links {
-      margin: 0;
-      padding: 0;
-      box-shadow: none;
-      position: static;
-      flex-direction: row;
-      list-style-type: none;
-      max-height: max-content;
-      width: 100%;
-      height: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    position: static;
+    flex-direction: row;
+    list-style-type: none;
+    max-height: max-content;
+    width: 100%;
+    height: 100%;
   }
 
   #navbar .navbar-link:last-child {
-      margin-right: 0;
+    margin-right: 0;
   }
-  .tbl-large {
-    visibility: visible;
-  }
-
-  .tbl-mobile {
-    visibility: hidden;
-  }
-
 }
 
 .inner-action {
-  max-width: 28rem; 
-  margin: 25px auto;
+  max-width: 100%;
+  margin: 2rem 0;
   display: flex;
+  justify-content: space-around;
+}
+
+.inner-action .btn {
+  margin: 0.5rem;
+}
+
+#button-actions {
+  padding: 0 0 0 0 !important;
 }
 
 @media screen and (max-width: 767 px) {
   #login-form-section .form-section {
     max-width: 75%;
     margin: auto;
+  }
+  .table {
+    font-size: calc(0.15rem + 1.5vw);
+    vertical-align: bottom;
   }
   .btn {
     max-width: 100%;
@@ -550,9 +564,13 @@ body {
     width: 90%;
     /* margin: auto; */
   }
+  /* .tbl-large {
+    visibility: hidden;
+  }
 
-  
-  
+  .tbl-mobile {
+    visibility: visible;
+  } */
 }
 
 /* ################### */
@@ -564,11 +582,12 @@ table a {
 }
 
 @media only screen and (max-width: 1600px) {
-  h1{
+  h1 {
     font-size: calc(2rem + 1.5vw);
-  },
-  h4{
-      font-size: .75rem + 1.5vw);
+  }
+  ,
+  h4 {
+    font-size: calc(0.75rem + 1.5vw);
   }
 }
 

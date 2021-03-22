@@ -87,8 +87,9 @@
                     <li><a href="/login3">Log in</a></li>
                     <li><a href="/register">Register</a></li>
 
-                    <% } else { %>  
-                        <li><a href = "#">Logged in as <%= currentUser.username %></a></li>
+                    <% } else { %> 
+                        
+                        <li><a class="logged-in" href = "#"><i class="fas fa-user"></i><%= currentUser.username %></a></li>
                         <li><a href="/">Main</a></li>
                         <li><a href="/prospects/new">New Prospect</a></li>
                         <li><a href="/prospects">View Prospects</a></li>
