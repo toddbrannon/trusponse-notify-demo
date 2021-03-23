@@ -6,8 +6,8 @@
             <div class="col-sm-12">
                 <h1 style="text-align: center;">Add a New Prospect</h1>
             </div>
-            <div class="col-sm-12">
-                <div style="width: 50%; margin: 25px auto;">
+            <div class="col-sm-12 form-container">
+                
                 <form action="/prospects" method="POST">
                             <div class = "form-group">
                                 <label for="firstName">First Name</label>
@@ -29,26 +29,16 @@
                                 <label for="message">Message/Comments</label>
                                 <textarea id="textarea" rows="4" class="form-control form-control-lg" name="message" placeholder=""></textarea>
                             </div>
-                            <div style="width: 75%; margin: 25px auto">
-                            <div class="show-buttons inner-action">
+                            
+                            <div class="col-sm-12 col-action">
                                 <ul id="button-actions">
                                     <li><button class="btn btn-lg btn-default btn-success btn-block" type="submit"><i class="far fa-save"></i> Save</a></li>
                                     <li><a class="btn btn-lg btn-default btn-info btn-block" href="/"><i class="fas fa-undo"></i> Cancel</a></li>
                                 </ul>
                             </div>
-                            <!-- <div class="show-buttons">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <button class="btn btn-lg btn-default btn-success btn-block" type="submit"><i class="far fa-save"></i> Save</a>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a class="btn btn-lg btn-default btn-info btn-block" href="/"><i class="fas fa-undo"></i> Cancel</a>
-                                    </div>
-                                </div>
-                            </div> -->
-                            </div>
+                           
                 </form>
-            </div>
+            
             </div>
             
         </div>

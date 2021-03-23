@@ -554,6 +554,16 @@ body {
   padding: 0 0 0 0 !important;
 }
 
+.btn-block {
+  margin-top: 1rem;
+  max-width: 100%;
+}
+.col-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 767px) {
   #login-form-section .form-section {
     max-width: 75%;
@@ -605,6 +615,22 @@ body {
   }
   .btn {
     max-width: 50%;
+    margin: auto;
+  }
+
+  .button-landing {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  #button-actions {
+    width: 100%;
+    display: block;
+  }
+  .inner-action {
+    text-align: center;
+  }
+  .btn-block {
+    margin-top: 1rem;
   }
 }
 
