@@ -540,6 +540,12 @@ body {
   justify-content: space-around;
 }
 
+.form-container {
+  max-width: 100%;
+  padding: 2rem 8rem;
+  justify-content: center;
+}
+
 .inner-action .btn {
   margin: 0.5rem;
 }
@@ -548,17 +554,37 @@ body {
   padding: 0 0 0 0 !important;
 }
 
-@media screen and (max-width: 767 px) {
+@media only screen and (max-width: 767px) {
   #login-form-section .form-section {
     max-width: 75%;
     margin: auto;
   }
+  .inner-action {
+    max-width: 100%;
+  }
+  .button-landing {
+    width: 100%;
+  }
   .table {
-    font-size: calc(0.15rem + 1.5vw);
+    font-size: calc(0.35rem + 1.5vw);
     vertical-align: bottom;
   }
+  .email {
+    display: none;
+  }
+
   .btn {
+    max-width: 50%;
+  }
+  .btn-default {
     max-width: 100%;
+  }
+  .back-btn {
+    display: flex;
+    justify-content: center;
+  }
+  .form-container {
+    padding: 1.2rem;
   }
   .inner-action .btn {
     width: 90%;
@@ -573,6 +599,15 @@ body {
   } */
 }
 
+@media only screen and (max-width: 575px) {
+  .form-container {
+    padding: 0 3rem;
+  }
+  .btn {
+    max-width: 50%;
+  }
+}
+
 /* ################### */
 
 table a {
@@ -581,7 +616,7 @@ table a {
   font-weight: 500;
 }
 
-@media only screen and (max-width: 1600px) {
+/* @media only screen and (max-width: 1600px) {
   h1 {
     font-size: calc(2rem + 1.5vw);
   }
@@ -589,16 +624,4 @@ table a {
   h4 {
     font-size: calc(0.75rem + 1.5vw);
   }
-}
-
-@media only screen and (max-width: 991px) {
-  /* .button-landing {
-    width: 50%;
-  } */
-}
-
-@media only screen and (max-width: 768px) {
-  .button-landing {
-    width: 100%;
-  }
-}
+} */

@@ -7,8 +7,8 @@
             <div class="col-sm-12">
                 <h1 style="text-align: center;">Edit Prospect</h1>
             </div>
-            <div class="col-sm-12">
-                <div style="width: 50%; margin: 25px auto;">
+            <div class="col-sm-12 form-container">
+                
                 <form action="/prospects/<%= prospect._id %>?_method=PUT" method="POST">
                     <div class="row">
                         <div class="col-sm-6">
@@ -44,9 +44,9 @@
                                 <textarea class="form-control" id="message" name="prospect[message]" rows="5"><%= prospect.message %></textarea>
                             </div>
 
-                            <div style="width: 75%; margin: 25px auto">
+                            
                             <div class="show-buttons inner-action">
-                                <div class="show-buttons inner-action">
+                                
                                     <ul id="button-actions">
                                         <li>
                                             <button class="btn btn-lg btn-default btn-success btn-block" type="submit"><i class="far fa-save"></i> Save</button>
@@ -55,18 +55,11 @@
                                             <a class="btn btn-lg btn-default btn-info btn-block" href="/prospects/<%= prospect._id %>"><i class="fas fa-undo"></i> Cancel</a>
                                         </li>
                                     </ul>
-                                <!-- <div class="row">
-                                    <div class="col-sm-6">
-                                        <button class="btn btn-lg btn-default btn-success btn-block" type="submit"><i class="far fa-save"></i> Save</button>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a class="btn btn-lg btn-default btn-info btn-block" href="/prospects/<%= prospect._id %>"><i class="fas fa-undo"></i> Cancel</a>
-                                    </div>
-                                </div> -->
+                                
                             </div>
-                            </div>
+                            
                 </form>
-            </div>
+            
             </div>
             </div>
             
