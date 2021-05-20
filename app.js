@@ -39,22 +39,12 @@ var prospectsRoutes         = require("./routes/prospects"),
     expandRoutes            = require("./routes/expand_demo");
 //==============================================================================
 
-// Load Keys ===================================================================
-// const keys                  = require('./config/keys');   // For Dev only!
-// Use mongoURI for production (Heroku - ) 
-
-// MongoDB Atlas Dev
-
-// MongoDB Atlas Prod
-
 const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@trusponse.ugdwe.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`   
 
 // Map global promises
 mongoose.Promise            = global.Promise;
 
-// mongoose.connect("mongodb://localhost/trusponse_notify");
 // Below updated 3/17/2021
-
 const connection = mongoose
     .connect(mongoURI, {
         useNewUrlParser: true,
